@@ -34,9 +34,21 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    ,
     // Doc: https://bootstrap-vue.js.org/docs/
-    ['bootstrap-vue/nuxt', { css: false }]
+    ['bootstrap-vue/nuxt', { css: false }],
+    [
+      'nuxt-fontawesome',
+      {
+        component: 'fab',
+        imports: [
+          //import whole set
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
+      }
+    ]
   ],
 
   /*
