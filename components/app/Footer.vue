@@ -124,6 +124,7 @@
 </template>
 <script>
 import { Vue, Component } from 'vue-property-decorator'
+import courses from '@/store/modules/course'
 import Logo from '@/assets/images/logo-footer.png'
 
 @Component({
@@ -144,19 +145,23 @@ export default class Footer extends Vue {
     { text: 'Hackerblocks' }
   ]
 
-  courses = [
-    { text: 'C++ For Beginners' },
-    { text: 'Java For Beginners' },
-    { text: 'ALGO++' },
-    { text: 'Algo.Java' },
-    { text: 'DS & Algo In C++ (Online)' },
-    { text: 'DS & Algo In Java (Online)' },
-    { text: 'Android Development' },
-    { text: 'Web Development Using NodeJS' },
-    { text: 'Android Development (Online)' },
-    { text: 'Web Development (Online)' },
-    { text: 'Machine Learning' }
-  ]
+  // courses = [
+  //   { text: 'C++ For Beginners' },
+  //   { text: 'Java For Beginners' },
+  //   { text: 'ALGO++' },
+  //   { text: 'Algo.Java' },
+  //   { text: 'DS & Algo In C++ (Online)' },
+  //   { text: 'DS & Algo In Java (Online)' },
+  //   { text: 'Android Development' },
+  //   { text: 'Web Development Using NodeJS' },
+  //   { text: 'Android Development (Online)' },
+  //   { text: 'Web Development (Online)' },
+  //   { text: 'Machine Learning' }
+  // ]
+
+  get courses() {
+    return courses.courses
+  }
 
   socials = [
     {
@@ -185,6 +190,10 @@ export default class Footer extends Vue {
       url: 'http://github.com/coding-blocks'
     }
   ]
+
+  created() {
+    courses.fetchCourses()
+  }
 }
 </script>
 <style>
