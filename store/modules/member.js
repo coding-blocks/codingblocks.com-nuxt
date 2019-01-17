@@ -1,27 +1,19 @@
-import {
-  Module,
-  VuexModule,
-  getModule,
-  MutationAction
-} from 'vuex-module-decorators'
-import * as api from '../api'
-import store from '@/store'
+import api from '@/models/'
 
-@Module({
-  // dynamic: true,
-  stateFactory: true,
+export default {
   namespaced: true,
-  name: 'members',
-  store
-})
-class MemberModule extends VuexModule {
-  members = []
-
-  @MutationAction({ mutate: ['members'] })
-  refreshMembers() {
-    const members = api.fetchMembers()
-    return { members }
+  state: () => {
+    members: []
+  },
+  mutations: {
+    setMembers(state, members) {
+      state.members = members
+    }
+  },
+  actions: {
+    getMembers({ commit }) {
+      const { data } = api.findAll('member')
+      commit('setMembers', data)
+    }
   }
 }
-
-export default getModule(MemberModule)

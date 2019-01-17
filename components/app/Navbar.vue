@@ -58,7 +58,7 @@
 </template>
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import course from '@/store/modules/course'
+// import course from '@/store/course'
 import Logo from '@/assets/images/logo-header.png'
 
 @Component({
@@ -69,10 +69,7 @@ export default class Navbar extends Vue {
   Logo = Logo
 
   get courses() {
-    return course.courses
-  }
-  created() {
-    course.fetchCourses()
+    return this.$store.state.course.courses
   }
 }
 </script>

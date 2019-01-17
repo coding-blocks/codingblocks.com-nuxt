@@ -54,10 +54,10 @@
             <ul class="list-unstyled">
               <li 
                 v-for="course in courses" 
-                :key="course.text">
+                :key="course.id">
                 <a 
                   href="#" 
-                  class="text-white">{{ course.text }}</a>
+                  class="text-white">{{ course.name }}</a>
               </li>
             </ul>
           </div>
@@ -124,7 +124,6 @@
 </template>
 <script>
 import { Vue, Component } from 'vue-property-decorator'
-import courses from '@/store/modules/course'
 import Logo from '@/assets/images/logo-footer.png'
 
 @Component({
@@ -132,6 +131,10 @@ import Logo from '@/assets/images/logo-footer.png'
 })
 export default class Footer extends Vue {
   Logo = Logo
+
+  get courses() {
+    return this.$store.state.course.courses
+  }
 
   abouts = [
     { text: 'Why Coding Blocks' },
@@ -144,24 +147,6 @@ export default class Footer extends Vue {
     { text: 'Events' },
     { text: 'Hackerblocks' }
   ]
-
-  // courses = [
-  //   { text: 'C++ For Beginners' },
-  //   { text: 'Java For Beginners' },
-  //   { text: 'ALGO++' },
-  //   { text: 'Algo.Java' },
-  //   { text: 'DS & Algo In C++ (Online)' },
-  //   { text: 'DS & Algo In Java (Online)' },
-  //   { text: 'Android Development' },
-  //   { text: 'Web Development Using NodeJS' },
-  //   { text: 'Android Development (Online)' },
-  //   { text: 'Web Development (Online)' },
-  //   { text: 'Machine Learning' }
-  // ]
-
-  get courses() {
-    return courses.courses
-  }
 
   socials = [
     {
@@ -190,10 +175,6 @@ export default class Footer extends Vue {
       url: 'http://github.com/coding-blocks'
     }
   ]
-
-  created() {
-    courses.fetchCourses()
-  }
 }
 </script>
 <style>

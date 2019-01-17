@@ -1,29 +1,20 @@
-import {
-  Module,
-  VuexModule,
-  getModule,
-  MutationAction,
-  Mutation,
-  Action
-} from 'vuex-module-decorators'
-import store from '@/store'
-import * as api from '../api'
+import Vue from 'vue'
+import api from '@/models'
 
-@Module({
-  // dynamic: true,
-  stateFactory: true,
+export default {
   namespaced: true,
-  name: 'courses',
-  store
-})
-class CourseModule extends VuexModule {
-  courses = []
-
-  @MutationAction({ mutate: ['courses'] })
-  async fetchCourses() {
-    const courses = await api.fetchCourses()
-    return { courses }
+  state: () => {
+    courses: []
+  },
+  mutations: {
+    setCourses(state, courses) {
+      Vue.set(state, 'courses', courses)
+    }
+  },
+  actions: {
+    async getCourses({ commit }) {
+      const { data } = await api.findAll('course')
+      commit('setCourses', data)
+    }
   }
 }
-
-export default getModule(CourseModule)
