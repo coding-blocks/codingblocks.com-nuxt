@@ -40,10 +40,6 @@ import AlgoLogo from '@/assets/images/courses/color_algo.svg'
   }
 })
 export default class Index extends Vue {
-  created() {
-    this.$store.dispatch('course/getCourses')
-  }
-
   courses = [
     {
       name: 'C++ for beginners',

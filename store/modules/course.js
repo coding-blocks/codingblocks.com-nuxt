@@ -3,12 +3,20 @@ import api from '@/models'
 
 export default {
   namespaced: true,
-  state: () => {
-    courses: []
-  },
+  state: () => ({
+    onlineCourses: [],
+    offlineCourses: []
+  }),
   mutations: {
     setCourses(state, courses) {
-      Vue.set(state, 'courses', courses)
+      const offline = []
+      const online = []
+      courses.forEach(obj => {
+        if (obj.courseType === 'offline') offline.push(obj)
+        else if (obj.courseType === 'online') online.push(obj)
+      })
+      Vue.set(state, 'onlineCourses', online)
+      Vue.set(state, 'offlineCourses', offline)
     }
   },
   actions: {

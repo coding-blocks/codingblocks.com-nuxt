@@ -53,7 +53,7 @@
             <hr>
             <ul class="list-unstyled">
               <li 
-                v-for="course in courses" 
+                v-for="course in offlineCourses" 
                 :key="course.id">
                 <a 
                   href="#" 
@@ -132,8 +132,8 @@ import Logo from '@/assets/images/logo-footer.png'
 export default class Footer extends Vue {
   Logo = Logo
 
-  get courses() {
-    return this.$store.state.course.courses
+  get offlineCourses() {
+    return this.$store.state.course.offlineCourses
   }
 
   abouts = [

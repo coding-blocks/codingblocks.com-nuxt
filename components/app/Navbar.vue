@@ -26,17 +26,21 @@
           text="Classroom Courses" 
           right>
           <b-dropdown-item 
-            v-for="course in courses" 
+            v-for="course in offlineCourses" 
             :key="course.id" 
-            href="#">{{ course.name }}</b-dropdown-item>
+            :href="`/classroom-courses/${course.slug}`">{{ course.name }}</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
           text="Online Courses" 
           right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item 
+            v-for="course in onlineCourses"
+            :key="course.id"
+            :href="`https://online.codingblocks.com/courses/${course.slug}`"
+            target="_blank">{{ course.name }}</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
-          text="Resources" 
+          text="Resources"
           right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
         </b-nav-item-dropdown>
@@ -68,8 +72,12 @@ import Logo from '@/assets/images/logo-header.png'
 export default class Navbar extends Vue {
   Logo = Logo
 
-  get courses() {
-    return this.$store.state.course.courses
+  get offlineCourses() {
+    return this.$store.state.course.offlineCourses
+  }
+
+  get onlineCourses() {
+    return this.$store.state.course.onlineCourses
   }
 }
 </script>
