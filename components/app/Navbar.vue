@@ -2,7 +2,7 @@
   <b-navbar 
     toggleable="md" 
     type="light">
-    <a href="#">
+    <a href="/">
       <b-img 
         :src="Logo"
         fluid
@@ -20,7 +20,7 @@
         <b-nav-item-dropdown 
           text="About Us" 
           right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item href="#">Introduction</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
           text="Classroom Courses" 
@@ -42,17 +42,22 @@
         <b-nav-item-dropdown 
           text="Resources"
           right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item href="https://hack.codingblocks.com">Hacker Blocks</b-dropdown-item>
+          <b-dropdown-item href="https://cb.lk/yt">Youtube</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
           text="Competitions" 
           right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item href="https://hack.codingblocks.com">HackerBlocks</b-dropdown-item>
+          <b-dropdown-item href="https://boss.codingblocks.com">BOSS</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
           text="Contact Us" 
           right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
+          <b-dropdown-item href="#">Pitampura</b-dropdown-item>
+          <b-dropdown-item href="#">Noida</b-dropdown-item>
+          <b-dropdown-item href="#">Dwarks</b-dropdown-item>
+          <b-dropdown-item href="#">Dehradun</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
