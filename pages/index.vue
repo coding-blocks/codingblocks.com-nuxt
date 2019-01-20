@@ -1,7 +1,7 @@
 <template>
   <div>
     <Carousel/>
-    <section class="container">
+    <section class="container p-4">
       <div class="row">
         <div class="col-sm-12 text-center">
           <h1 class="display-4">CLASSROOM COURSES</h1>
