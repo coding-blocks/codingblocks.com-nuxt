@@ -20,7 +20,8 @@
         <b-nav-item-dropdown 
           text="About Us" 
           right>
-          <b-dropdown-item href="#">Introduction</b-dropdown-item>
+          <b-dropdown-item href="/about">Introduction</b-dropdown-item>
+          <b-dropdown-item href="/team">Our Team</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
           text="Classroom Courses" 
