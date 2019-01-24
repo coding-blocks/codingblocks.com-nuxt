@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="row">
-          <TeamCard
+          <MemberCard
             v-for="member in members" 
             :key="member"
             :image-src="member.image"
@@ -29,13 +29,13 @@
 <script>
 import { Vue, Component } from 'vue-property-decorator'
 import Banner from '@/components/app/Banner'
-import TeamCard from '@/components/team/TeamCard'
+import MemberCard from '@/components/cards/MemberCard'
 import manmohanGupta from '@/assets/images/team/manmohan-gupta.jpg'
 
 @Component({
   components: {
     Banner,
-    TeamCard
+    MemberCard
   }
 })
 export default class extends Vue {
