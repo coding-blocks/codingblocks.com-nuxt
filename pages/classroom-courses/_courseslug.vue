@@ -47,6 +47,7 @@
     </div>
     <CourseContents :contents="contents"/>
     <CourseFAQ :faqs="faqs"/>
+    <ReviewHolder :reviews="reviews"/>
   </div>
 </template>
 <script>
@@ -55,7 +56,9 @@ import CourseBanner from '@/components/course/CourseBanner.vue'
 import CourseFAQ from '@/components/course/CourseFAQ.vue'
 import CourseContents from '@/components/course/CourseContents.vue'
 import CourseFeatures from '@/components/course/CourseFeatures.vue'
+import ReviewHolder from '@/components/review/ReviewHolder.vue'
 import Banner from '@/assets/images/banners/cover_launchpad.jpg'
+import manmohanGupta from '@/assets/images/team/manmohan-gupta.jpg'
 import api from '@/models'
 
 @Component({
@@ -63,7 +66,8 @@ import api from '@/models'
     CourseBanner,
     CourseFAQ,
     CourseContents,
-    CourseFeatures
+    CourseFeatures,
+    ReviewHolder
   }
 })
 export default class Course extends Vue {
@@ -72,6 +76,16 @@ export default class Course extends Vue {
   features = []
   faqs = []
   contents = []
+  reviews = [
+    {
+      imageSrc: manmohanGupta,
+      name: 'Manmohan Gupta',
+      course: 'Python',
+      review:
+        'If you want to become a brilliant programmer, and are willing to put in the hours and dedicate yourself to acquiring great skills, then there is no better place for you than Coding Blocks. The teaching assistants, Naman and Athar, were also brilliant and very helpful, who ensured we never felt like any problem was too hard.',
+      star_count: 5
+    }
+  ]
 
   async created() {
     const courseResponse = await api.findAll('course', {

@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "Best programming Courses in Delhi-NCR | Coding Blocks",
+    title: 'Best programming Courses in Delhi-NCR | Coding Blocks',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
