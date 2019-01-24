@@ -2,26 +2,26 @@
   <b-navbar 
     toggleable="md" 
     type="light">
-    <a href="/">
+    <nuxt-link to="/">
       <b-img 
         :src="Logo"
         fluid
         width="100%"
         alt="Logo"
         class="logo" />
-    </a>
+    </nuxt-link>
 
     <b-collapse 
       id="nav_collapse" 
       is-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto mr-2">
-        <b-nav-item href="#">Campus Ambassador</b-nav-item>
+        <b-nav-item to="#">Campus Ambassador</b-nav-item>
         <b-nav-item-dropdown 
           text="About Us" 
           right>
-          <b-dropdown-item href="/about">Introduction</b-dropdown-item>
-          <b-dropdown-item href="/team">Our Team</b-dropdown-item>
+          <b-dropdown-item to="/about">Introduction</b-dropdown-item>
+          <b-dropdown-item to="/team">Our Team</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
           text="Classroom Courses" 
@@ -29,7 +29,7 @@
           <b-dropdown-item 
             v-for="course in offlineCourses" 
             :key="course.id" 
-            :href="`/classroom-courses/${course.slug}`">{{ course.name }}</b-dropdown-item>
+            :to="`/classroom-courses/${course.slug}`">{{ course.name }}</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown 
           text="Online Courses" 
@@ -55,10 +55,10 @@
         <b-nav-item-dropdown 
           text="Contact Us" 
           right>
-          <b-dropdown-item href="#">Pitampura</b-dropdown-item>
-          <b-dropdown-item href="#">Noida</b-dropdown-item>
-          <b-dropdown-item href="#">Dwarks</b-dropdown-item>
-          <b-dropdown-item href="#">Dehradun</b-dropdown-item>
+          <b-dropdown-item to="#">Pitampura</b-dropdown-item>
+          <b-dropdown-item to="#">Noida</b-dropdown-item>
+          <b-dropdown-item to="#">Dwarks</b-dropdown-item>
+          <b-dropdown-item to="#">Dehradun</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
