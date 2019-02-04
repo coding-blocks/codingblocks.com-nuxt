@@ -9,7 +9,11 @@ const config = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   loading: { color: '#3B8070' },
-  css: ['tachyons/css/tachyons.min.css', '~/assets/css/main.css'],
+  css: [
+    '@coding-blocks/bootstrap/dist/css/bootstrap.css',
+    '~/assets/css/main.css',
+  ],
+  modules: [['bootstrap-vue/nuxt', { css: false }]],
 }
 
 export default config
