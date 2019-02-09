@@ -1,6 +1,6 @@
 import { Batch } from './batch'
 import { Member } from './member'
-import DevourRelation from './devour-relation';
+import DevourRelation from './devour-relation'
 
 export interface Center {
   name: string
@@ -17,15 +17,17 @@ const center: Center = {
   id: '',
   contactNo: '',
   email: '',
-  batches: [{
-    jsonApi: 'hasMany',
-    type: 'batch'
-  }],
+  batches: [
+    {
+      jsonApi: 'hasMany',
+      type: 'batch',
+    },
+  ],
   googleMapLink: '',
   incharge: {
     jsonApi: 'hasOne',
-    type: 'member'
-  }
+    type: 'member',
+  },
 }
 
 export default center

@@ -1,5 +1,5 @@
 import { Course } from './course'
-import DevourRelation from './devour-relation';
+import DevourRelation from './devour-relation'
 
 export interface CourseTopics {
   id: string
@@ -24,8 +24,8 @@ const topic: CourseTopics = {
   subtopics: [],
   course: {
     jsonApi: 'hasOne',
-    type: 'course'
-  }
+    type: 'course',
+  },
 }
 
 export default topic

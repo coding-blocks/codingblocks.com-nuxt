@@ -1,5 +1,5 @@
 import { Course } from './course'
-import DevourRelation from './devour-relation';
+import DevourRelation from './devour-relation'
 
 export interface CourseFeature {
   id: string
@@ -16,8 +16,8 @@ const feature: CourseFeature = {
   description: '',
   course: {
     jsonApi: 'hasOne',
-    type: 'course'
-  }
+    type: 'course',
+  },
 }
 
 export default feature

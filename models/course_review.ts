@@ -1,5 +1,5 @@
 import { Course } from './course'
-import DevourRelation from './devour-relation';
+import DevourRelation from './devour-relation'
 
 export interface CourseReview {
   id: string
@@ -18,10 +18,10 @@ const review: CourseReview = {
   body: '',
   course: {
     jsonApi: 'hasOne',
-    type: 'course'
+    type: 'course',
   },
   rating: 0,
-  link: ''
+  link: '',
 }
 
 export default review

@@ -12,7 +12,7 @@ export interface Batch {
   startDate?: string
   endDate?: string
   lectureStartTime?: string
-  lectureEndTime?: string,
+  lectureEndTime?: string
   teachers?: Array<Member>
 }
 
@@ -22,17 +22,17 @@ const batch: Batch = {
   sellPrice: 0,
   center: {
     jsonApi: 'hasOne',
-    type: 'comment'
+    type: 'comment',
   },
   course: {
     jsonApi: 'hasOne',
-    type: 'course'
+    type: 'course',
   },
   startDate: '',
   endDate: '',
   lectureStartTime: '',
   lectureEndTime: '',
-  teachers: []
+  teachers: [],
 }
 
 export default batch

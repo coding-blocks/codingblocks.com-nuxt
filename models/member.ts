@@ -1,6 +1,6 @@
 import { Center } from './center'
 import { Course } from './course'
-import DevourRelation from './devour-relation';
+import DevourRelation from './devour-relation'
 
 export type MemberType = 'employee' | 'admin' | 'intern'
 
@@ -28,12 +28,14 @@ const member: Member = {
   order: -1,
   center: {
     jsonApi: 'hasOne',
-    type: 'center'
+    type: 'center',
   },
-  courses: [{
-    jsonApi: 'hasMany',
-    type: 'course'
-  }]
+  courses: [
+    {
+      jsonApi: 'hasMany',
+      type: 'course',
+    },
+  ],
 }
 
 export default member
