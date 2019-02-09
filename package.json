@@ -5,13 +5,14 @@
     "@coding-blocks/bootstrap": "^4.2.1-cb3",
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "devour-client": "^2.0.15",
     "nuxt-ts": "latest",
     "tachyons": "^4.11.1",
     "vue-property-decorator": "^7.3.0",
     "vuex-module-decorators": "^0.9.7"
   },
   "scripts": {
-    "dev": "nuxt-ts",
+    "dev": "yarn lint:fix && nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
